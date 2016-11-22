@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            background: red;
+        }
+        p::before{
+            display: inline-block;
+            border: 5px solid transparent;
+            border-right-color: red;
+            content: "";
+            position: relative;
+            left: -10px;
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .flashlight{
+            position: relative;
+        }
+        .flashlight::after,.flashlight::before{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            background: red;
+            content: "";
+
+            margin: auto;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+        }
+        .flashlight::after{
+
+            animation:flashlight-after 2s linear 0s infinite;
+            -webkit-animation:flashlight-after 2s linear 0s infinite;
+
+        }
+        .flashlight::before{
+
+
+            animation:flashlight-before 2s linear 0s infinite;
+            -webkit-animation:flashlight-before 2s linear 0s infinite;
+        }
+
+        @keyframes flashlight-before
+        {
+            0% {transform: scale(1,1);opacity: 0.5}
+            50% {transform: scale(10,10);opacity: 0}
+            100% {transform: scale(1,1);opacity: 0}
+        }
+
+        @-webkit-keyframes flashlight-after
+        {
+            0% {transform: scale(1,1);opacity: 0}
+            15% {transform: scale(1,1);opacity: 0.5}
+            50% {transform: scale(5,5);opacity: 0}
+            100% {transform: scale(1,1);opacity: 0}
+        }
+    </style>
+</head>
+<body>
+    <span class="flashlight">我是会闪光的文字</span>
+</body>
+</html>

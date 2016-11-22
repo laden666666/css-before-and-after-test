@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        label{
+            display: block;
+        }
+        .required::before{
+            content: "*";
+            color: red;
+            display: inline-block;
+            width: 0;
+            position: relative;
+            left:-5px;
+        }
+
+        .unit::after{
+            content: "万元";
+        }
+    </style>
+</head>
+<body>
+    <label class="required">姓名 <input /> </label>
+    <label class="unit">金额 <input /> </label>
+</body>
+</html>
