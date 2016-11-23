@@ -30,10 +30,10 @@
 </head>
 <body>
     <div class="parent">
-        <p>文字1文字1文字1文字1</p>
+        <p>文字文字文字文字</p>
     </div>
     <div class="parent pointer-events">
-        <p>文字2文字2文字2文字2</p>
+        <p>文字文字文字文字</p>
     </div>
 
     <script>
@@ -45,7 +45,7 @@
         document.querySelectorAll("p").forEach(function (parent) {
             parent.addEventListener("click",function (event) {
                 event.stopPropagation();
-                alert("点击的文字");
+                alert("点击的是里面的文字");
             })
         })
     </script>
