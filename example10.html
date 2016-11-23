@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .parent{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+        }
+
+        .parent::after{
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            content: '请点击我';
+            background: blue;
+            top: 0;
+            left: 0;
+            color: #fff;
+        }
+
+        .pointer-events::after{
+            pointer-events: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <p>文字1文字1文字1文字1</p>
+    </div>
+    <div class="parent pointer-events">
+        <p>文字2文字2文字2文字2</p>
+    </div>
+
+    <script>
+        document.querySelectorAll(".parent").forEach(function (parent) {
+            parent.addEventListener("click",function () {
+                alert("点击的父容器");
+            })
+        })
+        document.querySelectorAll("p").forEach(function (parent) {
+            parent.addEventListener("click",function (event) {
+                event.stopPropagation();
+                alert("点击的文字");
+            })
+        })
+    </script>
+</body>
+</html>
